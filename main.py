@@ -11,19 +11,19 @@ import random
 
 client = discord.Client()
 
-trigger_words = ["sad" , "depressed", "gay", "good", "cracked", "gamer", "lol", "bot", "who", "lmao", "lmfao", "bro", "duke", "dude", "whats", "val", "up", "impostor"] 
+trigger_words = ["insert trigger words here"] 
 
-sus_triggers = ['sus', 'among us']
+sus_triggers = ['these are another set of trigger words']
 
 sus_response = ['https://tenor.com/view/among-us-amog-us-among-shitting-shitting-gif-19980480',
 'https://tenor.com/view/boiled-soundcloud-boiled-boiled-irl-boiled-utsc-boiled-cheesestick-agem-soundcloud-gif-20049996', 'https://tenor.com/view/among-us-gif-18684920']
 
-start_response = [ "ayo", "u are stone head :moyai:", "easy", "to be frank, I would have to be jackson Mcguinness", 'homophobic, scared of homes', ':beareded_person::beer:', ":skull: imagine talking to a bot ", 'im homophone', 'literally the sussest person'
+start_response = ['these are a list of responses the bot will randomly pick from']
 ]
 
 
 def get_quote():
-  response = requests.get("https://zenquotes.io/api/random")
+  response = requests.get("https://zenquotes.io/api/random") 
   json_data = json.loads(response.text)
   quote = json_data[0]['q'] + " -" + json_data[0]['a']
   return(quote)
@@ -72,7 +72,7 @@ async def on_message(message):
     await message.channel.send("@everyone lol")
 
   if msg.startswith("santi"):
-    await message.channel.send("santi is gay")
+    await message.channel.send("santi loves apples")
   
   if any(word in msg for word in trigger_words):
     await message.channel.send(random.choice(start_response))
